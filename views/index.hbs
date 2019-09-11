@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{> head}}
+</head>
+
+<body>
+
+    <h1>Capstone Server</h1>
+    <h2>Hello World!</h2>
+
+<!-- Illustration -->
+    <div class="row">
+        <div class="col-lg-2 offset-lg-4 formContainer">
+            <img id="imgLogcabin" src="/img/logcabin_large.jpg" alt="logcabincrochetafghan">
+        </div>
+    </div>
+    <!--row end-->
+
+    <!--Buttons-->
+    <div class="row">
+        <div class="col-md-4 offset-md-5">
+            <div id="dataButtons" class="container">
+                <input class="btn btn-md btn-success" id="btnDataLeagues" name="btnDataLeagues" type="button" value="Leagues">
+                <input class="btn btn-md btn-primary" id="btnDataTeams" name="btnDataTeams" type="button" value="Teams">
+            </div>
+        </div>
+    </div>
+
+    <div>
+    <ul id="listDiv">
+    </ul> 
+    </div>
+    {{> footer}} {{> scripts}}
+
+</body>
+
+</html>

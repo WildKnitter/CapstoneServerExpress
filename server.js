@@ -1,35 +1,63 @@
 const http = require('http');
-const url = require('url');
-const fs = require('fs');
 
-const connect = require("connect");
+// require Node's built-in Modules
+const os = require('os');
 
-//const publicPath = './public/';
-//const dataPath = './data/';
+// require logger Module
+const logger = require('logger').createLogger('log.txt');
 
-const host = '127.0.0.1';
-const port = 3000;
+const express = require('express');
+const hbs = require('hbs');
+const bodyParser = require('body-parser');
 
-var app = connect();
+// Get user info from OS
+let user = os.userInfo();
+console.log(user);
 
-app.use((request, response) => {
-    let clientURL = request.url;
-    let parsedURL = url.parse(clientURL);
-    let href = parsedURL.href;
+// include routes
+const leagues = require('./routes/leagues');
+const teams = require('./routes/teams');
 
-    if (href === '/') {
-        response.end(fs.readFileSync('./public/index.html'));
-    } else if (href === '/leagues') {
-        response.end(fs.readFileSync('./data/leagues.json'));
-    } else if (href === '/teams') {
-        response.end(fs.readFileSync('./data/teams.json'));
-    } else {
-        console.log("404: ERROR");
-    }
-    response.end("Hello, Connect!\n");
+var app = express();
+
+// register hbs partials
+hbs.registerPartials(__dirname + '/views/partials');
+// set view engine
+app.set('view engine', 'hbs');
+
+// partials
+hbs.registerHelper('getCurrentYear', () => {
+    return new Date().getFullYear();
 });
 
-// http://localhost:3000
-http.createServer(app).listen(port, host);
+// Middleware
+app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
-console.log(`http://${host}:${port}`);
+// use routes
+app.use('/leagues', leagues);
+app.use('/teams', teams);
+app.get('/index', (request, response) => {
+    response.render('index.hbs');
+});
+
+// Error-handling middleware 
+// Handle http 404 response
+app.use((request, response, next) => {
+    response.status(404).redirect('/404.html');
+});
+// Handle 500 response
+app.use((request, response, next) => {
+    response.status(500).redirect('/error.html');
+});
+
+const port = 3000;
+const server = http.createServer(app).listen(port);
+
+server.on('listening', () => {
+    console.log(`Server Listening on ${server.address().port}`);
+});
+
+// Write to log
+logger.info(`App accessed by: ${user.username}!\n`);
