@@ -1,0 +1,236 @@
+    /* This is an additional stylesheet for the Hip to be Square Capstone site*/
+    /* Author:  Pamela Belknap
+    
+    /* Additional styling for the Bootstrap Carousel template */
+    
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+    /* GLOBAL STYLES
+-------------------------------------------------- */
+    /* Padding below the footer and lighter body text */
+    
+    body {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        color: Black;
+        /*    background-image: url("../images/franklinknittedsquares12691270.jpg");
+        background-repeat: no-repeat; */
+    }
+    /* CUSTOMIZE THE CAROUSEL
+  -------------------------------------------------- */
+    /* Carousel base class */
+    
+    .carousel {
+        margin-bottom: 4rem;
+    }
+    /* Since positioning the image, we need to help out the caption */
+    
+    .carousel-caption {
+        bottom: 3rem;
+        z-index: 10;
+    }
+    
+    .carousel-caption p {
+        font-size: 2rem;
+    }
+    /* Declare heights because of positioning of img element */
+    
+    .carousel-item {
+        height: 32rem;
+    }
+    
+    .carousel-item>img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        height: 32rem;
+    }
+    /* Featurettes
+  ------------------------- */
+    
+    .featurette-divider {
+        margin: 5rem 0;
+        /* Space out the Bootstrap <hr> more */
+    }
+    /* Thin out the marketing headings */
+    
+    .featurette-heading {
+        font-weight: 300;
+        line-height: 1;
+        letter-spacing: -.05rem;
+    }
+    
+    #firstFeaturette {
+        padding-left: 2rem;
+    }
+    
+    .regularHeader {
+        text-align: center;
+        padding-top: 1em;
+    }
+    
+    .regularSubHeader {
+        text-align: center;
+    }
+    
+    h3 {
+        text-align: center;
+        padding-top: 1.1em;
+        padding-bottom: 1.1em;
+    }
+    
+    h4 {
+        text-align: center;
+    }
+    
+    form {
+        text-align: left;
+        padding: 25px;
+    }
+    /* Font Awesome color changes */
+    
+    .fa-pencil-alt {
+        color: darkgoldenrod;
+    }
+    
+    .fa-binoculars {
+        color: darkblue;
+    }
+    
+    .fa-trash-alt {
+        color: darkred;
+    }
+    /**********************************/
+    
+    .formContainer {
+        padding: 15px;
+    }
+    
+    .firstRow {
+        font-weight: bold;
+    }
+    
+    .btnjustifycenter {
+        text-align: center;
+        font-weight: bold;
+    }
+    
+    .deleteCancelContainer {
+        border-radius: 25px;
+        padding: 0px 5px;
+    }
+    
+    .bg-purple {
+        background-color: purple;
+    }
+    
+    #memberCount {
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+    
+    #teamLink {
+        font-weight: bold;
+        text-decoration: underline;
+    }
+    /* Fixes an unordered list so that the list doesn't have
+    bullets and does not indent */
+    
+    #managerList {
+        list-style: none;
+        padding-left: 0;
+    }
+    
+    #teamDiv,
+    #patternIllustrations {
+        padding-top: 1rem;
+    }
+    
+    #msgDiv,
+    #msgAdd,
+    #msgDivDelete {
+        color: darkred;
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+    /* RESPONSIVE CSS
+  -------------------------------------------------- */
+    
+    @media (min-width: 40em) {
+        /* Bump up size of carousel content */
+        .carousel-caption p {
+            margin-bottom: 1.25rem;
+            font-size: 1.5rem;
+            line-height: 1.4;
+        }
+        .featurette-heading {
+            font-size: 50px;
+        }
+        #imgcrochetbabyblanket {
+            background-image: url("../images/crochetbabyblanket300.jpg");
+            width: 300px;
+            height: 300px;
+            background-repeat: no-repeat;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        #imgfranklinsquares {
+            background-image: url("../images/franklinknittedsquares500500.jpg");
+            width: 500px;
+            height: 500px;
+            background-repeat: no-repeat;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        #imgyellowgrannysquare {
+            background-image: url("../images/smallyellowgrannysquare300300.jpg");
+            width: 500px;
+            height: 500px;
+            background-repeat: no-repeat;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+    
+    @media (min-width: 62em) {
+        .featurette-heading {
+            margin-top: 1rem;
+        }
+        #imgcrochetbabyblanket {
+            background-image: url("../images/crochetbabyblanket300.jpg");
+            width: 300px;
+            height: 300px;
+            background-repeat: no-repeat;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        #imgfranklinsquares {
+            background-image: url("../images/franklinknittedsquareslong.jpg");
+            width: 1263px;
+            height: 680px;
+            background-repeat: no-repeat;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        #imgyellowgrannysquare {
+            background-image: url("../images/smallyellowgrannysquare300300.jpg");
+            width: 500px;
+            height: 500px;
+            background-repeat: no-repeat;
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Capstone Server</title>
+</head>
+
+<body>
+
+    <h1>Capstone Server</h1>
+    <p>Hello World!</p>
+
+    <!--Buttons-->
+    <div class="row">
+        <div class="col-md-4 offset-md-5">
+            <div id="dataButtons" class="container">
+                <input class="btn btn-md btn-success" id="btnDataLeagues" name="btnDataLeagues" type="button" value="Leagues">
+                <input class="btn btn-md btn-primary" id="btnDataTeams" name="btnDataTeams" type="button" value="Teams">
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!--External js script-->
+    <script>
+        $(function() {
+            let leaguePath = "leagues";
+            let teamPath = "teams";
+
+            $("#btnDataLeagues").on("click", function() {
+                getData(leaguePath);
+            });
+            $("#btnDataTeams").on("click", function() {
+                getData(teamPath);
+            });
+        });
+
+        function getData(path) {
+            $.getJSON(`http://localhost:3000/${path}`, function() {})
+                .done(function(data) {
+                    console.log(data);
+                })
+                .fail(function() {
+                    console.log('Error connecting to Server.');
+                });
+        }
+        // 
+        //     $.getJSON('http://localhost:3000/leagues', function() {})
+        //         .done(function(data) {
+        //             console.log(data);
+        //         })
+        //         .fail(function() {
+        //             console.log('Error connecting to Server.');
+        //         });
+        // });
+        // $("#btnDataTeams").on("click", function() {
+        //     $.getJSON('http://localhost:3000/teams', function() {})
+        //         .done(function(data) {
+        //             console.log(data);
+        //         })
+        //         .fail(function() {
+        //             console.log('Error connecting to Server.');
+        //         });
+        // });
+    </script>
+
+</body>
+
+</html>
