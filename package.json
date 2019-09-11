@@ -1,0 +1,26 @@
+{
+  "name": "capstoneserverexpress",
+  "version": "1.0.0",
+  "description": "Capstone Server with Express",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WildKnitter/CapstoneServerExpress.git"
+  },
+  "author": "Pam Belknap",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WildKnitter/CapstoneServerExpress/issues"
+  },
+  "homepage": "https://github.com/WildKnitter/CapstoneServerExpress#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "hbs": "^4.0.4",
+    "logger": "0.0.1"
+  }
+}
